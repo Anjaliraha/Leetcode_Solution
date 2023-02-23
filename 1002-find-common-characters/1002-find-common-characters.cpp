@@ -12,8 +12,7 @@ public:
                 freq[k]=min(temp[k],freq[k]);
             } 
             
-            
-        }
+ }
     
     for(int i=0;i<26;i++){
         for(int j=0;j<freq[i];j++){
