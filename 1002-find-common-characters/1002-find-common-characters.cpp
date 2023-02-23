@@ -17,9 +17,9 @@ public:
     
     for(int i=0;i<26;i++){
         for(int j=0;j<freq[i];j++){
-            string vec;
-            vec.push_back(i+'a');
-            ans.push_back(vec);
+            //string vec;
+            //vec.push_back(i+'a');
+            ans.push_back(string(1,i+'a'));
         }
     }
     return ans;
