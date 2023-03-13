@@ -11,6 +11,16 @@
 class Solution {
     private:
     //recursive way
+    ListNode* reverse1(ListNode* head)
+    {
+        if(head==NULL || head->next==NULL){
+            return head;
+        }
+        ListNode* smallhead=reverse1(head->next);
+        head->next->next=head;
+        head->next=NULL;
+        return smallhead;
+    }
     void reverse(ListNode* &head,ListNode* curr,ListNode* prev){
         if(curr==NULL){
             head=prev;
@@ -23,9 +33,9 @@ class Solution {
 public:
     
     ListNode* reverseList(ListNode* head) {
-        ListNode* curr=head;
-        ListNode* prev=NULL;
-        reverse(head,curr,prev);
-        return head;
+        // ListNode* curr=head;
+        // ListNode* prev=NULL;
+        // reverse(head,curr,prev);
+        return reverse1(head);
     }
 };
