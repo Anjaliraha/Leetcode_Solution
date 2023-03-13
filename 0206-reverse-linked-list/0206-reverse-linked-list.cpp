@@ -9,18 +9,23 @@
  * };
  */
 class Solution {
-public:
-    ListNode* reverseList(ListNode* head) {
-        //Iterative way
-        ListNode* prev=NULL;
-        ListNode* curr=head;
-        while(curr!=NULL){
-            ListNode* currnext=curr->next;
-            curr->next=prev;
-            prev=curr;
-            curr=currnext;
+    private:
+    //recursive way
+    void reverse(ListNode* &head,ListNode* curr,ListNode* prev){
+        if(curr==NULL){
+            head=prev;
+            return;
         }
-        head=prev;
+        ListNode* forward=curr->next;
+        reverse(head,forward,curr);
+        curr->next=prev;
+    }
+public:
+    
+    ListNode* reverseList(ListNode* head) {
+        ListNode* curr=head;
+        ListNode* prev=NULL;
+        reverse(head,curr,prev);
         return head;
     }
 };
