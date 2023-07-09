@@ -47,7 +47,7 @@ public:
                 //j++;
             //}
         }
-        if(s.empty())return to_string(0);
+        
         return s;
     }
 };
