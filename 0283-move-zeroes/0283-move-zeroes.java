@@ -6,17 +6,17 @@ class Solution {
     }
     public void moveZeroes(int[] nums) {
         int temp=0;
-        if(nums.length>1){
-            for(int i=1;i<nums.length;i++){
-            if(nums[i]==0 && nums[i-1]!=0){
-                temp=i;
-            }
-            else if(nums[i]!=0 && nums[temp]==0){
-                swap(nums,temp,i);
-                temp++;
+        if(nums.length==1)return;
+        int nonzeroindex=0;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]!=0){
+                nums[nonzeroindex]=nums[i];
+                nonzeroindex++;
             }
         }
+        while(nonzeroindex<nums.length){
+            nums[nonzeroindex]=0;
+            nonzeroindex++;
         }
-        
     }
 }
